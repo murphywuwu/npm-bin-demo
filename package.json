@@ -3,8 +3,21 @@
     "hello": "./hello.js"
   },
   "scripts": {
+    "//": "使用figlet中bin字段中定义的映射名",
     "fig": "figlet",
-    "hello": "./hello.js"
+    
+    
+    "//": "使用路径",
+    "hello": "./hello.js",
+    
+    "//": "npm run fig -> 不会报错",
+    "//": "npm run hello(将上面的hello改为(hello: hello)) -> 会报错",
+
+    "//": "要将hello改成figlet的形式，需在bin字段中定义hello字段并映射到相应路径，在install npm-bin-demo时会自动将其链接到node_modules/.bin目录下",
+    "//": "具体如下:https://docs.npmjs.com/files/package.json",
+    "//": "例子",
+    "//": "ls -la  node_modules/.bin/figlet",
+    "//": "lrwxr-xr-x 1 mac staff 24  4 30 18:45 node_modules/.bin/figlet -> ../figlet-cli/bin/figlet"
   },
   "dependencies": {
     "figlet-cli": "^0.1.0"
